@@ -1,4 +1,3 @@
-
 [![Deploy with Vercel](https://vercel.com/button)](https://web-catedra-vejez.vercel.app/)
 
 **Deploy:** [web-catedra-vejez.vercel.app](https://web-catedra-vejez.vercel.app/)
@@ -267,6 +266,24 @@ npm run test:e2e:headed
 | 8 | Imagen para compartir en redes (1200×630 px) | ⏳ Pendiente | Cliente |
 | 9 | Prueba end-to-end de formularios en producción | ⏳ Pendiente | Desarrollador |
 | 10 | Prueba en dispositivos iOS y Android | ⏳ Pendiente | Desarrollador |
+
+---
+
+## 🟠 Asistente virtual FAQ (ChatBot)
+
+- **Burbuja flotante** (FAB) apilada sobre el botón de WhatsApp
+- **Responde consultas frecuentes** sobre inscripciones, cartilla clínica, equipo, agenda, programa, contacto y más
+- **Respuestas rápidas** sugeridas al abrir el chat
+- **Links de acción** en cada respuesta (navegan a la sección correspondiente)
+- **Modo oscuro y mobile**: ventana tipo bottom sheet
+- **Accesibilidad**: roles ARIA, navegación por teclado, foco automático
+- **Actualización fácil**: solo editar `src/components/ChatBot/chatKnowledge.ts` para agregar/editar temas
+
+### ¿Cómo funciona?
+
+- El visitante escribe su consulta en lenguaje natural
+- El bot detecta palabras clave y responde con la información más relevante
+- Si no encuentra coincidencias, sugiere contactar directamente
 
 ---
 
