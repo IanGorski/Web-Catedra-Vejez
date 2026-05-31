@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useAnimateOnScroll } from '@/hooks/useAnimateOnScroll';
 import { BackToTop } from '@/components/ui';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import ChatBot from '@/components/ChatBot/ChatBot';
 import LangProvider from '@/components/LangProvider';
 
 import InstitucionalBadge from '@/components/InstitucionalBadge';
@@ -46,6 +47,7 @@ export default function App() {
       <Footer />
       <BackToTop />
       <WhatsAppButton />
+      <ChatBot />
       <InstitucionalBadge />
     </LangProvider>
   );
