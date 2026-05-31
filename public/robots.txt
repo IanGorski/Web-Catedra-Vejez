@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap (actualizar con URL real cuando el sitio esté publicado)
+# Sitemap: https://catedraterceraedadyvejez.psi.uba.ar/sitemap.xml
