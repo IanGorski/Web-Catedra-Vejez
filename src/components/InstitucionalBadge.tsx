@@ -4,7 +4,7 @@ const INFO_ITEMS = [
   { label: 'Facultad', value: 'Psicología — UBA' },
   { label: 'Año de fundación', value: '1986' },
   { label: 'Área', value: 'Psicología del envejecimiento' },
-  { label: 'Sede', value: 'Hipólito Yrigoyen 3242, CABA' },
+  { label: 'Sede', value: 'Av. Independencia 3065, CABA' },
   { label: 'Contacto', value: 'catedravejez@psi.uba.ar' },
 ];
 
