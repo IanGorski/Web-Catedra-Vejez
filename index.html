@@ -27,7 +27,10 @@
   <meta property="og:description" content="Formación, investigación y asistencia clínica para una vejez digna, activa y saludable.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://catedraterceraedadyvejez.psi.uba.ar/">
-  <meta property="og:image" content="/img/og-image.jpg">
+  <meta property="og:image" content="https://catedraterceraedadyvejez.psi.uba.ar/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cátedra Psicología de la Tercera Edad y Vejez — UBA">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Cátedra Vejez UBA">
 
@@ -35,7 +38,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Cátedra Psicología de la Tercera Edad y Vejez — UBA">
   <meta name="twitter:description" content="Formación, investigación y asistencia clínica para una vejez digna, activa y saludable.">
-  <meta name="twitter:image" content="/img/og-image.jpg">
+  <meta name="twitter:image" content="https://catedraterceraedadyvejez.psi.uba.ar/img/og-image.jpg">
+  <meta name="twitter:image:alt" content="Cátedra Psicología de la Tercera Edad y Vejez — UBA">
   <meta name="theme-color" content="#E8916A">
 
   <!-- Previene FOUC al cargar preferencia de tema -->
@@ -47,7 +51,7 @@
     })();
   </script>
 
-  <!-- Splash screen CSS — se carga antes que cualquier otra hoja de estilos -->
+  <!-- se carga antes que cualquier otra hoja de estilos -->
   <style>
     #app-splash {
       position: fixed; inset: 0; z-index: 9999;
@@ -105,9 +109,15 @@
     }
   </style>
 
-  <!-- Fuentes -->
+  <!-- Favicon y recursos críticos -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+
+  <!-- Preload LCP: isologo en splash screen (primera imagen visible) -->
+  <link rel="preload" as="image" href="/img/Isologo/isologo.jpeg" fetchpriority="high">
+
+  <!-- Fuentes: preconnect reduce latencia DNS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
@@ -127,19 +137,62 @@
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "Cátedra Psicología de la Tercera Edad y Vejez",
-    "description": "Cátedra de Psicología de la Tercera Edad y Vejez de la Facultad de Psicología, UBA.",
+    "alternateName": "Cátedra Vejez UBA",
+    "description": "Espacio de formación, investigación y asistencia clínica en psicogerontología de la Facultad de Psicología, UBA. Comprometido con una vejez digna, activa y saludable.",
     "url": "https://catedraterceraedadyvejez.psi.uba.ar/",
+    "logo": "https://catedraterceraedadyvejez.psi.uba.ar/img/Isologo/isologo.jpeg",
+    "image": "https://catedraterceraedadyvejez.psi.uba.ar/img/og-image.jpg",
     "email": "catedraterceraedadyvejez@gmail.com",
+    "foundingDate": "1994",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Hipólito Yrigoyen 3242",
       "addressLocality": "Ciudad Autónoma de Buenos Aires",
       "addressCountry": "AR"
     },
+    "founder": {
+      "@type": "Person",
+      "name": "Ricardo Iacub",
+      "jobTitle": "Profesor Titular",
+      "worksFor": {
+        "@type": "CollegeOrUniversity",
+        "name": "Facultad de Psicología, Universidad de Buenos Aires"
+      }
+    },
     "parentOrganization": {
       "@type": "CollegeOrUniversity",
       "name": "Facultad de Psicología, Universidad de Buenos Aires",
       "url": "https://www.psi.uba.ar"
+    },
+    "knowsAbout": [
+      "Psicogerontología",
+      "Psicología del envejecimiento",
+      "Vejez y tercera edad",
+      "Salud mental en adultos mayores",
+      "Gerontología clínica",
+      "Viejismo y edadismo"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Programas académicos",
+      "itemListElement": [
+        {
+          "@type": "Course",
+          "name": "Psicología de la Tercera Edad y Vejez — Materia de Grado",
+          "provider": { "@type": "CollegeOrUniversity", "name": "Facultad de Psicología, UBA" }
+        },
+        {
+          "@type": "Course",
+          "name": "Diplomatura en Recursos Psicogerontológicos",
+          "description": "120 horas, modalidad 100% virtual",
+          "provider": { "@type": "CollegeOrUniversity", "name": "Facultad de Psicología, UBA" }
+        },
+        {
+          "@type": "Course",
+          "name": "Programa de Actualización en Psicología del Envejecimiento",
+          "provider": { "@type": "CollegeOrUniversity", "name": "Facultad de Psicología, UBA" }
+        }
+      ]
     },
     "sameAs": [
       "https://www.instagram.com/terceraedadyvejezuba",
