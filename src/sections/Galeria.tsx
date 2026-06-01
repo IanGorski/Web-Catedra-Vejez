@@ -3,15 +3,6 @@ import { GALLERY_IMAGES } from '@/data/content';
 import { useLang } from '@/hooks/useLang';
 import { i18n } from '@/data/i18n';
 
-const HUES = [270, 220, 300, 240, 260, 200];
-
-const CamIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-    <circle cx="12" cy="13" r="4" />
-  </svg>
-);
-
 export default function Galeria() {
   const { lang } = useLang();
   const t = i18n[lang].galeria;
@@ -56,13 +47,13 @@ export default function Galeria() {
                 data-animate
                 onClick={() => openLightbox(i)}
               >
-                {/* TODO: reemplazar placeholder por <img src={img.src} alt={img.alt} loading="lazy" /> */}
-                <div
-                  className="gallery-placeholder"
-                  style={{ '--ph-hue': HUES[i] } as React.CSSProperties}
-                >
-                  <CamIcon />
-                </div>
+                <img
+                  src={img.src}
+                  alt={img.alt}
+                  loading={i === 0 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="gallery-img"
+                />
                 <span className="gallery-caption">{img.alt.split('—')[0].trim()}</span>
               </button>
             ))}
@@ -89,13 +80,13 @@ export default function Galeria() {
             </svg>
           </button>
           <div className="lightbox-media">
-            {/* TODO: cambiar a <img> cuando existan las imágenes reales */}
-            <div
-              className="gallery-placeholder gallery-placeholder--lg"
-              style={{ '--ph-hue': HUES[idx] } as React.CSSProperties}
-            >
-              <CamIcon />
-            </div>
+            <img
+              src={GALLERY_IMAGES[idx].src}
+              alt={GALLERY_IMAGES[idx].alt}
+              loading="eager"
+              decoding="async"
+              className="lightbox-img"
+            />
           </div>
           <button className="lightbox-next" aria-label={t.nextLabel} onClick={next}>
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
