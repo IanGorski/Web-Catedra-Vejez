@@ -2,6 +2,10 @@ import { type FC, type FormEvent, type KeyboardEvent, useEffect, useRef, useStat
 import { useChatBot } from '@/hooks/useChatBot';
 import { QUICK_REPLIES } from './chatKnowledge';
 
+interface ChatBotProps {
+    onOpenChange?: (isOpen: boolean) => void;
+}
+
 /* Ícono */
 const BotIcon: FC<{ size?: number }> = ({ size = 24 }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -23,7 +27,7 @@ const CloseIcon: FC = () => (
     </svg>
 );
 
-const ChatBot: FC = () => {
+const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
     const { isOpen, toggle, close, messages, isTyping, sendMessage } = useChatBot();
     const [input, setInput] = useState('');
     const [showQuickReplies, setShowQuickReplies] = useState(true);
@@ -71,6 +75,10 @@ const ChatBot: FC = () => {
         document.addEventListener('keydown', onKey);
         return () => document.removeEventListener('keydown', onKey);
     }, [isOpen, close]);
+
+    useEffect(() => {
+        onOpenChange?.(isOpen);
+    }, [isOpen, onOpenChange]);
 
     return (
         <>
