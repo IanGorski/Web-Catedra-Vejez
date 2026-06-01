@@ -64,7 +64,7 @@ export const KNOWLEDGE_BASE: BotResponse[] = [
             'investigador', 'staff', 'personal',
         ],
         response:
-            'La Cátedra está dirigida por el Dr. Ricardo Iacub y cuenta con un equipo de 15 docentes e investigadores especializados en psicogerontología.',
+            'La Cátedra está dirigida por el Dr. Ricardo Iacub y cuenta con un equipo de 55 docentes e investigadores especializados en psicogerontología.',
         links: [{ label: 'Conocer el equipo', href: '#equipo' }],
     },
     {
