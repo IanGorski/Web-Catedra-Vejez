@@ -294,7 +294,7 @@ input:focus, textarea:focus, select:focus {
 
 /* ── TYPOGRAPHY ─────────────────────────────────────────────── */
 h1, h2, h3, h4 { line-height: 1.25; font-weight: 700; color: var(--text); }
-h1 { font-family: var(--font-sans); }
+h1 { font-family: var(--font-serif); }
 h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 5vw, 2.35rem); font-weight: 700; }
 h3 { font-size: clamp(1.1rem, 3.5vw, 1.35rem); }
 h4 { font-size: 1rem; }
@@ -313,6 +313,10 @@ p  { max-width: 65ch; color: var(--text-soft); }
 .section--dark    { background: var(--dark-bg, #1C1A18); color: #fff; }
 .section--dark p, .section--dark h2, .section--dark h3,
 .section--dark h4 { color: inherit; }
+
+.audience-card--mayores h3 {
+  font-family: var(--font-serif);
+}
 
 .section-header {
   text-align: center;
