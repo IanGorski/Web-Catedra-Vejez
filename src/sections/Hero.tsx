@@ -42,7 +42,7 @@ function HeroBgAurora() {
   );
 }
 
-/* ── Hero ────────────────────────────────────────────────────── */
+/* Hero */
 export default function Hero() {
   const { lang } = useLang();
   const t = i18n[lang].hero;
@@ -62,12 +62,12 @@ export default function Hero() {
         <h1 className="hero-title">
           {t.titleLight.replace(/\n/g, ' ')}{t.titleStrong}
         </h1>
-        <blockquote className="hero-lema">
-          "{t.lema}"
-        </blockquote>
         <p className="hero-subtitle">
           {t.subtitle}
         </p>
+        <blockquote className="hero-lema">
+          "{t.lema}"
+        </blockquote>
         <div className="hero-pillars" aria-label="Los cinco pilares de la cátedra">
           {t.pillars.map((p: string, i: number) => (
             <span key={i} className="hero-pillar">{p}</span>
