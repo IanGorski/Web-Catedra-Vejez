@@ -1,5 +1,5 @@
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useAnimateOnScroll } from '@/hooks/useAnimateOnScroll';
 import { BackToTop } from '@/components/ui';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -19,6 +19,8 @@ import Footer     from '@/sections/Footer';
 
 export default function App() {
   useAnimateOnScroll();
+  const [isChatBotOpen, setIsChatBotOpen] = useState(false);
+  const [isMobileChatLayout, setIsMobileChatLayout] = useState(false);
 
   // Eliminar el splash screen cuando React termina de montar
   useEffect(() => {
@@ -27,6 +29,17 @@ export default function App() {
     splash.classList.add('splash-out');
     const t = window.setTimeout(() => splash.remove(), 520);
     return () => window.clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 599px)');
+    const syncViewport = (event?: MediaQueryListEvent) => {
+      setIsMobileChatLayout(event ? event.matches : mediaQuery.matches);
+    };
+
+    syncViewport();
+    mediaQuery.addEventListener('change', syncViewport);
+    return () => mediaQuery.removeEventListener('change', syncViewport);
   }, []);
 
   return (
@@ -45,9 +58,9 @@ export default function App() {
         <Contacto />
       </main>
       <Footer />
-      <BackToTop />
-      <WhatsAppButton />
-      <ChatBot />
+      {!(isMobileChatLayout && isChatBotOpen) && <BackToTop />}
+      {!(isMobileChatLayout && isChatBotOpen) && <WhatsAppButton />}
+      <ChatBot onOpenChange={setIsChatBotOpen} />
       <InstitucionalBadge />
     </LangProvider>
   );
