@@ -183,7 +183,7 @@ export const i18n = {
       professorDesc: 'Doctor en Psicología. Especialista en Psicología de la Vejez. Investigador y conferencista internacional.',
       bodyText1: 'La Cátedra está compuesta por un equipo de profesionales especializados en el trabajo en psicología con perspectiva gerontológica, brindando herramientas teóricas y prácticas para una atención integral de las personas mayores.',
       bodyText2: 'Trabajamos desde una perspectiva crítica del viejismo, promoviendo una cultura que valore la vejez como una etapa plena de vida, con derechos y protagonismo social.',
-      motto: 'No al viejismo. Para una formación profesional: Vejez obligatoria.',
+      motto: 'No al viejismo.',
       infoTitle: 'Información institucional',
       infoItems: [
         { label: 'Institución', value: 'Facultad de Psicología · UBA' },
