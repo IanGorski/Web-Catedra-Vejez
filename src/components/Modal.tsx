@@ -22,7 +22,11 @@ export default function Modal({ isOpen, onClose, title, accent, children }: Moda
   // Bloquear scroll del body
   useEffect(() => {
     document.body.style.overflow = isOpen ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
+    document.body.classList.toggle('section-modal-open', isOpen);
+    return () => {
+      document.body.style.overflow = '';
+      document.body.classList.remove('section-modal-open');
+    };
   }, [isOpen]);
 
   // Foco al abrir
