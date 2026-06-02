@@ -3117,8 +3117,9 @@ figcaption span {
   position: relative;
   z-index: 1;
   width: min(780px, 100vw);
-  height: 100dvh;
   height: 100vh;
+  height: 100svh;
+  height: 100dvh;
   background: var(--surface);
   display: flex;
   flex-direction: column;
@@ -3195,7 +3196,7 @@ figcaption span {
   overflow-y: auto;
   overscroll-behavior: contain;
   background: var(--surface);
-  padding-bottom: 1.5rem;
+  padding-bottom: max(1.5rem, calc(env(safe-area-inset-bottom) + 1rem));
 }
 /* Secciones dentro del modal: quitamos padding-block excesivo y unificamos fondo */
 .section-modal-body .section,
@@ -3255,6 +3256,18 @@ figcaption span {
   .hub-card-desc { display: none; }
   .hub-card { gap: .75rem; padding: 14px; }
   .section-modal-panel { width: 100vw; }
+  .section-modal-body {
+    padding-bottom: max(2.5rem, calc(env(safe-area-inset-bottom) + 2rem));
+  }
+}
+
+body.section-modal-open .whatsapp-fab,
+body.section-modal-open .back-to-top,
+body.section-modal-open .chatbot-fab,
+body.section-modal-open .chatbot-window,
+body.section-modal-open .ib-trigger {
+  opacity: 0;
+  pointer-events: none;
 }
 @media (min-width: 900px) {
   .hub-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
