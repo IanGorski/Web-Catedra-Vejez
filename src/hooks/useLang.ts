@@ -7,7 +7,7 @@ export const LANG_KEY = 'lang';
 export function getInitialLang(): Lang {
   const stored = localStorage.getItem(LANG_KEY) as Lang | null;
   if (stored === 'en' || stored === 'es') return stored;
-  return navigator.language.slice(0, 2) === 'en' ? 'en' : 'es';
+  return 'es';
 }
 
 export interface LangContextValue {

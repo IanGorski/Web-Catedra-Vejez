@@ -28,7 +28,7 @@ const CloseIcon: FC = () => (
 );
 
 const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
-    const { isOpen, toggle, close, messages, isTyping, sendMessage } = useChatBot();
+    const { isOpen, toggle, close, messages, isTyping, sendMessage, resetConversation } = useChatBot();
     const [input, setInput] = useState('');
     const [showQuickReplies, setShowQuickReplies] = useState(true);
     const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -57,6 +57,13 @@ const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
     function handleQuickReply(text: string) {
         setShowQuickReplies(false);
         sendMessage(text);
+    }
+
+    function handleNewConversation() {
+        resetConversation();
+        setInput('');
+        setShowQuickReplies(true);
+        setTimeout(() => inputRef.current?.focus(), 0);
     }
 
     function handleKeyDown(e: KeyboardEvent<HTMLInputElement>) {
@@ -92,9 +99,6 @@ const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
                 <span className="chatbot-fab__icon chatbot-fab__icon--bot" aria-hidden="true">
                     <BotIcon size={26} />
                 </span>
-                <span className="chatbot-fab__icon chatbot-fab__icon--close" aria-hidden="true">
-                    <CloseIcon />
-                </span>
                 {!isOpen && (
                     <span className="chatbot-fab__badge" aria-hidden="true">1</span>
                 )}
@@ -119,9 +123,20 @@ const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
                             En línea
                         </span>
                     </div>
+                    {messages.length > 1 && (
+                        <button
+                            className="chatbot-header__action"
+                            type="button"
+                            onClick={handleNewConversation}
+                            aria-label="Iniciar nueva conversación"
+                        >
+                            Nueva conversación
+                        </button>
+                    )}
                     <button
                         className="chatbot-header__close"
                         onClick={close}
+                        type="button"
                         aria-label="Cerrar asistente"
                     >
                         <CloseIcon />

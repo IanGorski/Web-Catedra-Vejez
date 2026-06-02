@@ -13,6 +13,10 @@ export interface ChatMessage {
     links?: BotResponse['links'];
 }
 
+function getInitialMessages(): ChatMessage[] {
+    return [{ id: 0, from: 'bot', text: GREETING }];
+}
+
 /** Normaliza texto: minúsculas + sin tildes */
 function normalize(text: string): string {
     return text
@@ -23,9 +27,7 @@ function normalize(text: string): string {
 
 export function useChatBot() {
     const [isOpen, setIsOpen] = useState(false);
-    const [messages, setMessages] = useState<ChatMessage[]>([
-        { id: 0, from: 'bot', text: GREETING },
-    ]);
+    const [messages, setMessages] = useState<ChatMessage[]>(getInitialMessages);
     const [isTyping, setIsTyping] = useState(false);
     const typingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -69,5 +71,14 @@ export function useChatBot() {
     const close = useCallback(() => setIsOpen(false), []);
     const toggle = useCallback(() => setIsOpen(v => !v), []);
 
-    return { isOpen, open, close, toggle, messages, isTyping, sendMessage };
+    const resetConversation = useCallback(() => {
+        if (typingTimer.current) {
+            clearTimeout(typingTimer.current);
+            typingTimer.current = null;
+        }
+        setIsTyping(false);
+        setMessages(getInitialMessages());
+    }, []);
+
+    return { isOpen, open, close, toggle, messages, isTyping, sendMessage, resetConversation };
 }

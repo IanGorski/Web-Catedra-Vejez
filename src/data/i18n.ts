@@ -51,7 +51,7 @@ export const i18n = {
         },
         {
           title: 'Personas mayores',
-          body: 'Conectá con profesionales especializados en vejez a través de la Cartilla Clínica de la Cátedra.',
+          body: 'Conocé las propuestas académicas, charlas y talleres destinados exclusivamente a personas mayores.',
           items: ['Actividades para personas mayores', 'Talleres de la Facultad de Psicología', 'Clases y actividades académicas', 'Atención clínica (Cartilla Clínica)'],
           cta: 'Solicitar atención',
           href: '#clinica',
@@ -60,9 +60,9 @@ export const i18n = {
     },
     stats: [
       { count: 30,  suffix: '+', label: 'Años de trayectoria' },
-      { count: 700, suffix: '+', label: 'Estudiantes que nos eligen' },
+      { count: 700, suffix: '+', label: 'Estudiantes que nos eligen por año' },
       { count: 55,  suffix: '',  label: 'Docentes e investigadores' },
-      { count: 40,  suffix: '+', label: 'Publicaciones científicas' },
+      { count: 50,  suffix: '+', label: 'Publicaciones científicas' },
     ],
     hub: {
       eyebrow: 'Explorá la cátedra',

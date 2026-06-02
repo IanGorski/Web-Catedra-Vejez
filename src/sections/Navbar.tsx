@@ -21,6 +21,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMenuOpen(false);
+    };
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  }, [menuOpen]);
+
   // Close on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -53,7 +69,7 @@ export default function Navbar() {
     <nav
       id="mainNav"
       ref={navRef}
-      className={`${scrolled ? 'scrolled' : ''}`}
+      className={`${scrolled ? 'scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}
       aria-label={t.aria}
     >
       <div className="nav-container">
