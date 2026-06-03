@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import { useLang } from '@/hooks/useLang';
 import { i18n } from '@/data/i18n';
 
@@ -18,10 +19,25 @@ const EMBERS = Array.from({ length: 32 }, (_, i) => ({
 }));
 
 function HeroBgAurora() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 767px)');
+    const syncViewport = (event?: MediaQueryListEvent) => {
+      setIsMobile(event ? event.matches : mediaQuery.matches);
+    };
+
+    syncViewport();
+    mediaQuery.addEventListener('change', syncViewport);
+    return () => mediaQuery.removeEventListener('change', syncViewport);
+  }, []);
+
+  const activeEmbers = isMobile ? EMBERS.slice(0, 10) : EMBERS;
+
   return (
     <div className="hero-bg" aria-hidden="true">
       <div className="hero-aurora" />
-      {EMBERS.map(e => (
+      {activeEmbers.map(e => (
         <span
           key={e.id}
           className="hero-ember"
@@ -53,7 +69,16 @@ export default function Hero() {
 
       <div className="hero-sello" aria-hidden="true">
         <div className="hero-sello-ring" />
-        <img src="/img/Isologo/isologo.jpeg" alt="" className="hero-sello-img" draggable={false} />
+        <img
+          src="/img/Isologo/isologo.jpeg"
+          alt=""
+          className="hero-sello-img"
+          draggable={false}
+          fetchPriority="high"
+          decoding="async"
+          width={110}
+          height={110}
+        />
         <span className="hero-sello-label">Cátedra Oficial · UBA</span>
       </div>
 

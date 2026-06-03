@@ -234,6 +234,31 @@ body {
   animation: latido-bg 14s ease-in-out infinite;
 }
 
+@media (max-width: 767px) {
+  body,
+  [data-theme="dark"] body {
+    animation: none;
+    background-size: auto;
+  }
+
+  .hero::before,
+  .hero-aurora {
+    animation: none;
+    filter: none;
+  }
+
+  .hero-ember {
+    animation-duration: 18s !important;
+  }
+
+  .nav-isologo-img,
+  .hero-sello,
+  .hero-sello-img,
+  .ib-trigger--visible {
+    animation: none !important;
+  }
+}
+
 /* ── ANIMACIÓN: LATIDO DE VIDA ─────────────────────────────── */
 /* El fondo respira suavemente — vejez activa y digna           */
 @keyframes latido-bg {
@@ -245,6 +270,13 @@ body {
 main.container {
   padding-top: clamp(56px, 10vw, 100px);
   padding-bottom: clamp(56px, 10vw, 100px);
+}
+
+@media (max-width: 767px) {
+  main > section:not(#inicio) {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+  }
 }
 
 img { max-width: 100%; height: auto; display: block; }

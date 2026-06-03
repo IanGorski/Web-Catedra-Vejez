@@ -1,12 +1,8 @@
 
-import { useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { useAnimateOnScroll } from '@/hooks/useAnimateOnScroll';
 import { BackToTop } from '@/components/ui';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import ChatBot from '@/components/ChatBot/ChatBot';
 import LangProvider from '@/components/LangProvider';
-
-import InstitucionalBadge from '@/components/InstitucionalBadge';
 
 import Banner     from '@/sections/Banner';
 import Navbar     from '@/sections/Navbar';
@@ -17,18 +13,46 @@ import Hub        from '@/sections/Hub';
 import Contacto   from '@/sections/Contacto';
 import Footer     from '@/sections/Footer';
 
+const WhatsAppButton = lazy(() => import('@/components/WhatsAppButton'));
+const ChatBot = lazy(() => import('@/components/ChatBot/ChatBot'));
+const InstitucionalBadge = lazy(() => import('@/components/InstitucionalBadge'));
+
 export default function App() {
   useAnimateOnScroll();
   const [isChatBotOpen, setIsChatBotOpen] = useState(false);
   const [isMobileChatLayout, setIsMobileChatLayout] = useState(false);
+  const [shouldRenderDeferred, setShouldRenderDeferred] = useState(false);
 
   // Eliminar el splash screen cuando React termina de montar
   useEffect(() => {
     const splash = document.getElementById('app-splash');
     if (!splash) return;
+
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      splash.remove();
+      return;
+    }
+
     splash.classList.add('splash-out');
-    const t = window.setTimeout(() => splash.remove(), 520);
+    const t = window.setTimeout(() => splash.remove(), 220);
     return () => window.clearTimeout(t);
+  }, []);
+
+  useEffect(() => {
+    const enableDeferred = () => setShouldRenderDeferred(true);
+    const timerId = window.setTimeout(enableDeferred, 1200);
+
+    const events: Array<keyof WindowEventMap> = ['pointerdown', 'touchstart', 'keydown', 'wheel'];
+    events.forEach((eventName) => {
+      window.addEventListener(eventName, enableDeferred, { once: true, passive: true });
+    });
+
+    return () => {
+      window.clearTimeout(timerId);
+      events.forEach((eventName) => {
+        window.removeEventListener(eventName, enableDeferred);
+      });
+    };
   }, []);
 
   useEffect(() => {
@@ -59,9 +83,13 @@ export default function App() {
       </main>
       <Footer />
       {!(isMobileChatLayout && isChatBotOpen) && <BackToTop />}
-      {!(isMobileChatLayout && isChatBotOpen) && <WhatsAppButton />}
-      <ChatBot onOpenChange={setIsChatBotOpen} />
-      <InstitucionalBadge />
+      {shouldRenderDeferred && (
+        <Suspense fallback={null}>
+          {!(isMobileChatLayout && isChatBotOpen) && <WhatsAppButton />}
+          <ChatBot onOpenChange={setIsChatBotOpen} />
+          <InstitucionalBadge />
+        </Suspense>
+      )}
     </LangProvider>
   );
 }

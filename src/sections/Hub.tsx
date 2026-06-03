@@ -135,13 +135,6 @@ const SECTION_COMPONENTS: Record<string, SectionComponent> = {
   faq:           FAQ,
 };
 
-/* ── Pre-renderizado de rutas críticas ───────────────────────── */
-import('@/sections/Nosotros');
-import('@/sections/Equipo');
-import('@/sections/Investigacion');
-import('@/sections/Publicaciones');
-import('@/sections/Prensa');
-
 export default function Hub() {
   const { lang } = useLang();
   const th = i18n[lang].hub;
@@ -285,7 +278,7 @@ export default function Hub() {
               <div className="modal-splash" role="status" aria-label="Cargando sección">
                 <div className="splash-inner">
                   <div className="splash-symbol" aria-hidden="true" style={{display:'flex',justifyContent:'center',alignItems:'center',marginBottom:'1.2rem'}}>
-                    <img src="/img/Isologo/isologo.jpeg" alt="Isologo Cátedra Vejez UBA" style={{width:'72px',height:'72px',objectFit:'contain',borderRadius:'16px',boxShadow:'0 2px 12px rgba(0,0,0,.10)'}} />
+                    <img src="/img/Isologo/isologo.jpeg" alt="Isologo Cátedra Vejez UBA" decoding="async" width={72} height={72} style={{width:'72px',height:'72px',objectFit:'contain',borderRadius:'16px',boxShadow:'0 2px 12px rgba(0,0,0,.10)'}} />
                   </div>
                   <p className="splash-title">Cátedra Vejez UBA</p>
                   <p className="splash-sub">Facultad de Psicología · Universidad de Buenos Aires</p>
