@@ -50,7 +50,7 @@ export const i18n = {
           href: '#posgrado',
         },
         {
-          title: 'Personas mayores',
+          title: 'Público General',
           body: 'Conocé las propuestas académicas, charlas y talleres destinados exclusivamente a personas mayores.',
           items: ['Actividades para personas mayores', 'Talleres de la Facultad de Psicología', 'Clases y actividades académicas', 'Atención clínica (Cartilla Clínica)'],
           cta: 'Solicitar atención',
@@ -61,7 +61,7 @@ export const i18n = {
     stats: [
       { count: 30,  suffix: '+', label: 'Años de trayectoria' },
       { count: 700, suffix: '+', label: 'Estudiantes que nos eligen por año' },
-      { count: 55,  suffix: '',  label: 'Docentes e investigadores' },
+      { count: 55,  suffix: '+',  label: 'Docentes e investigadores' },
       { count: 50,  suffix: '+', label: 'Publicaciones científicas' },
     ],
     hub: {
@@ -85,7 +85,7 @@ export const i18n = {
           items: [
             { id: 'estudiantes', label: 'Materia de Grado', desc: 'Programa, bibliografía, prácticas y acceso al Campus Virtual.' },
             { id: 'posgrado',    label: 'Posgrado',         desc: 'Diplomatura y Programa de Actualización en Psicogerontología 2026.' },
-            { id: 'recursos',    label: 'Recursos',         desc: 'Guías, programas y materiales académicos descargables.' },
+            { id: 'recursos',    label: 'Materiales para la formación académica', desc: 'Guías, programas y materiales académicos descargables.' },
           ],
         },
         {
@@ -161,7 +161,7 @@ export const i18n = {
         { href: '#estudiantes', label: 'Para estudiantes' },
         { href: '#posgrado', label: 'Posgrado' },
         { href: '#clinica', label: 'Cartilla Clínica' },
-        { href: '#recursos', label: 'Recursos descargables' },
+        { href: '#recursos', label: 'Materiales para la formación académica' },
         { href: '#faq', label: 'Preguntas frecuentes' },
         { href: '#contacto', label: 'Contacto' },
       ],
@@ -264,6 +264,7 @@ export const i18n = {
           { value: '', label: 'Seleccioná una opción' },
           { value: 'entrevista', label: 'Entrevista' },
           { value: 'nota', label: 'Nota de prensa' },
+          { value: 'newsletter', label: 'Suscripción al newsletter' },
           { value: 'columna', label: 'Columna de opinión' },
           { value: 'otro', label: 'Otro' },
         ],
@@ -274,6 +275,20 @@ export const i18n = {
       formHeader: {
         heading: 'Consultas de prensa',
         sub: '\u00bfQuerés entrevistar al equipo o cubrir una nota? Complete el formulario y nos comunicamos.',
+      },
+      newsletter: {
+        heading: 'Newsletter de novedades',
+        sub: 'Recibí por correo actualizaciones automáticas cuando publiquemos nuevo contenido en el sitio.',
+        email: 'Email',
+        placeholder: 'tuemail@dominio.com',
+        send: 'Suscribirme',
+        sending: 'Suscribiendo…',
+        help: 'Al suscribirte aceptás recibir comunicaciones institucionales de la cátedra.',
+        subject: 'Nueva suscripción al newsletter — Cátedra Vejez UBA',
+        rssTitle: 'Suscripción automática por RSS',
+        rssDesc: 'Para recibir avisos automáticos por cada novedad publicada, suscribite por RSS a email.',
+        rssCta: 'Suscribirme vía RSS/email',
+        rssLinkLabel: 'Abrir suscripción RSS por email',
       },
     },
     estudiantes: {
@@ -378,7 +393,7 @@ export const i18n = {
     },
     recursos: {
       eyebrow: 'Materiales',
-      heading: 'Recursos Descargables',
+      heading: 'Materiales para la formación académica',
       sub: 'Guías, programas y materiales académicos de la cátedra.',
       downloads: [
         { badge: 'PDF', badgeCls: '', title: 'Programa 2026', desc: 'Programa completo de la materia con bibliografía.', href: '#', label: 'Descargar', ariaLabel: 'Descargar programa 2026' },
@@ -392,7 +407,7 @@ export const i18n = {
     clinica: {
       eyebrow: 'Asistencia clínica',
       heading: 'Cartilla Clínica',
-      body: 'La cátedra cuenta con una cartilla de psicólogos especializados en psicogerontología para la atención de personas mayores y sus familias.',
+      body: 'La cátedra cuenta con una cartilla de profesionales para la atención de personas mayores y sus familia.',
       features: [
         'Atención psicológica individual',
         'Terapia grupal para adultos mayores',
@@ -559,7 +574,7 @@ export const i18n = {
           href: '#posgrado',
         },
         {
-          title: 'Older Adults',
+          title: 'General Public',
           body: 'Connect with aging specialists through the Chair\'s Clinical Directory.',
           items: ['Activities for older adults', 'Workshops from the Faculty of Psychology', 'Classes and academic activities', 'Clinical care (Clinical Directory)'],
           cta: 'Request care',
@@ -594,7 +609,7 @@ export const i18n = {
           items: [
             { id: 'estudiantes', label: 'Undergraduate', desc: 'Syllabus, bibliography, practicums and Virtual Campus access.' },
             { id: 'posgrado',    label: 'Graduate',      desc: 'Diploma and Psychogerontology Update Program 2026.' },
-            { id: 'recursos',    label: 'Resources',     desc: 'Downloadable guides, syllabi and academic materials.' },
+            { id: 'recursos',    label: 'Academic training materials', desc: 'Downloadable guides, syllabi and academic materials.' },
           ],
         },
         {
@@ -670,7 +685,7 @@ export const i18n = {
         { href: '#estudiantes', label: 'For students' },
         { href: '#posgrado', label: 'Graduate' },
         { href: '#clinica', label: 'Clinical Guide' },
-        { href: '#recursos', label: 'Downloads' },
+        { href: '#recursos', label: 'Academic training materials' },
         { href: '#faq', label: 'FAQ' },
         { href: '#contacto', label: 'Contact' },
       ],
@@ -773,6 +788,7 @@ export const i18n = {
           { value: '', label: 'Select an option' },
           { value: 'entrevista', label: 'Interview' },
           { value: 'nota', label: 'Press release' },
+          { value: 'newsletter', label: 'Newsletter subscription' },
           { value: 'columna', label: 'Opinion column' },
           { value: 'otro', label: 'Other' },
         ],
@@ -783,6 +799,20 @@ export const i18n = {
       formHeader: {
         heading: 'Press inquiries',
         sub: 'Want to interview the team or cover a story? Fill in the form and we will get back to you.',
+      },
+      newsletter: {
+        heading: 'Updates newsletter',
+        sub: 'Get automatic email updates whenever we publish new content on the website.',
+        email: 'Email',
+        placeholder: 'youremail@domain.com',
+        send: 'Subscribe',
+        sending: 'Subscribing…',
+        help: 'By subscribing, you agree to receive institutional communications from the chair.',
+        subject: 'New newsletter subscription — Cátedra Vejez UBA',
+        rssTitle: 'Automatic RSS subscription',
+        rssDesc: 'To receive automatic alerts for each new post, subscribe via RSS to email.',
+        rssCta: 'Subscribe via RSS/email',
+        rssLinkLabel: 'Open RSS to email subscription',
       },
     },
     estudiantes: {
@@ -887,7 +917,7 @@ export const i18n = {
     },
     recursos: {
       eyebrow: 'Materials',
-      heading: 'Downloads',
+      heading: 'Academic training materials',
       sub: 'Guides, syllabi, and academic materials from the chair.',
       downloads: [
         { badge: 'PDF', badgeCls: '', title: '2026 Syllabus', desc: 'Complete course syllabus with bibliography.', href: '#', label: 'Download', ariaLabel: 'Download 2026 syllabus' },
@@ -901,7 +931,7 @@ export const i18n = {
     clinica: {
       eyebrow: 'Clinical care',
       heading: 'Clinical Directory',
-      body: 'The chair maintains a directory of psychologists specialized in psychogerontology for the care of older adults and their families.',
+      body: 'The chair maintains a directory of professionals for the care of older adults and their families.',
       features: [
         'Individual psychological care',
         'Group therapy for older adults',

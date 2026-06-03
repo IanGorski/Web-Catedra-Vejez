@@ -21,13 +21,19 @@ describe('Banner y selector de idioma', () => {
   beforeEach(() => {
     localStorage.clear();
   });
-  it('banner se cierra y persiste estado dismiss', () => {
-    renderWithLang(<Banner />);
+  it('banner se cierra solo en la sesion actual y reaparece al volver a montar', () => {
+    const firstRender = renderWithLang(<Banner />);
     const closeBtn = screen.getByRole('button', { name: /cerrar aviso/i });
     fireEvent.click(closeBtn);
-    expect(localStorage.getItem('bannerDismissed')).toBe('1');
+
+    expect(localStorage.getItem('bannerDismissed')).toBeNull();
     expect(screen.queryByRole('alert')).toBeNull();
+
+    firstRender.unmount();
+    renderWithLang(<Banner />);
+    expect(screen.getByRole('alert')).toBeInTheDocument();
   });
+
   it('lang switcher ejecuta toggle al clickear', () => {
     const toggleSpy = vi.fn();
     renderWithLang(<LangSwitcher />, { toggle: toggleSpy });

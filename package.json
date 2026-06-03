@@ -4,7 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "rss:generate": "tsx scripts/generate-rss.ts",
+    "predev": "npm run rss:generate",
     "dev": "vite",
+    "prebuild": "npm run rss:generate",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
@@ -24,6 +27,7 @@
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/coverage-v8": "^4.1.5",
     "jsdom": "^29.1.1",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3",
     "vite": "^8.0.10",
     "vite-plugin-compression": "^0.5.1",

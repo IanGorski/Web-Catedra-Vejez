@@ -3,9 +3,7 @@ import { useLang } from '@/hooks/useLang';
 import { i18n } from '@/data/i18n';
 
 export default function Banner() {
-  const [dismissed, setDismissed] = useState(
-    () => localStorage.getItem('bannerDismissed') === '1'
-  );
+  const [dismissed, setDismissed] = useState(false);
   const { lang } = useLang();
   const t = i18n[lang].banner;
 
@@ -16,7 +14,6 @@ export default function Banner() {
 
   const close = () => {
     setDismissed(true);
-    localStorage.setItem('bannerDismissed', '1');
     document.documentElement.style.setProperty('--banner-h', '0px');
   };
   if (dismissed) return null;

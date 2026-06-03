@@ -108,7 +108,7 @@ const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
             <div
                 className={`chatbot-window${isOpen ? ' chatbot-window--open' : ''}`}
                 role="dialog"
-                aria-label="Asistente virtual de la Cátedra Vejez UBA"
+                aria-label="Asistente virtual Gero"
                 aria-modal="false"
             >
                 {/* Header */}
@@ -117,7 +117,7 @@ const ChatBot: FC<ChatBotProps> = ({ onOpenChange }) => {
                         <BotIcon size={20} />
                     </div>
                     <div className="chatbot-header__info">
-                        <span className="chatbot-header__name">Asistente Cátedra</span>
+                        <span className="chatbot-header__name">Gero</span>
                         <span className="chatbot-header__status">
                             <span className="chatbot-header__dot" aria-hidden="true" />
                             En línea

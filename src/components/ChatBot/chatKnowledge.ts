@@ -126,8 +126,8 @@ export const KNOWLEDGE_BASE: BotResponse[] = [
             'herramienta', 'documento',
         ],
         response:
-            'Tenemos materiales y recursos disponibles para estudiantes, profesionales y el público general en la sección Recursos.',
-        links: [{ label: 'Ver recursos', href: '#recursos' }],
+            'Tenemos materiales para la formación académica disponibles para estudiantes, profesionales y público general en la sección de Materiales.',
+        links: [{ label: 'Ver materiales', href: '#recursos' }],
     },
 ];
 
@@ -142,7 +142,7 @@ export const FALLBACK_RESPONSE: BotResponse = {
 
 /** Mensaje de bienvenida al abrir el chat */
 export const GREETING =
-    '¡Hola! Soy el asistente de la Cátedra Vejez UBA. ¿En qué puedo ayudarte?\n\nPodés preguntarme sobre inscripciones, la cartilla clínica, el equipo, la agenda, el programa de la materia o cualquier otra consulta.';
+    '¡Hola! Soy Gero, el asistente de la Cátedra Vejez UBA. ¿En qué puedo ayudarte?\n\nPodés preguntarme sobre inscripciones, la cartilla clínica, el equipo, la agenda, el programa de la materia o cualquier otra consulta.';
 
 /** Respuestas rápidas sugeridas al inicio */
 export const QUICK_REPLIES = [

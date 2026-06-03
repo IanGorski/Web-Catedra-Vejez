@@ -37,7 +37,7 @@ describe('ChatBot', () => {
     fireEvent.click(screen.getByRole('button', { name: /iniciar nueva conversación/i }));
 
     expect(screen.queryByText('Horarios de cursada')).not.toBeInTheDocument();
-    expect(screen.getByText(/¡Hola! Soy el asistente de la Cátedra Vejez UBA\./i)).toBeInTheDocument();
+    expect(screen.getByText(/¡Hola! Soy Gero, el asistente de la Cátedra Vejez UBA\./i)).toBeInTheDocument();
     expect(screen.queryByRole('button', { name: /iniciar nueva conversación/i })).not.toBeInTheDocument();
     expect(screen.getByRole('textbox', { name: /escribí tu consulta/i })).toHaveValue('');
   });

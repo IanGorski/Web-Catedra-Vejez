@@ -2451,6 +2451,92 @@ figcaption span {
   transition: color var(--transition);
 }
 .prensa-red-link:hover { color: var(--primary-dark); }
+
+.newsletter-wrapper {
+  margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+  background: linear-gradient(135deg, color-mix(in oklab, var(--surface-alt) 82%, white 18%), var(--surface-alt));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: clamp(18px, 3.5vw, 30px);
+}
+
+.newsletter-header { margin-bottom: 1rem; }
+.newsletter-header h3 { color: var(--primary); margin-bottom: .35rem; }
+.newsletter-header p { color: var(--text-soft); font-size: .9rem; }
+
+.newsletter-form__row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .75rem;
+  align-items: end;
+}
+
+.newsletter-form__label {
+  display: block;
+  font-size: .84rem;
+  color: var(--text-soft);
+  margin-bottom: .35rem;
+}
+
+.newsletter-form__input {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  color: var(--text);
+  padding: .75rem .85rem;
+  font-size: .92rem;
+}
+
+.newsletter-form__input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 26%, transparent);
+}
+
+.newsletter-form__btn { min-width: 140px; }
+
+.newsletter-form__help {
+  margin-top: .7rem;
+  color: var(--text-muted);
+  font-size: .78rem;
+}
+
+.newsletter-rss-box {
+  margin-top: 1rem;
+  border: 1px dashed color-mix(in oklab, var(--primary) 42%, var(--border));
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--surface) 84%, var(--primary) 16%);
+  padding: .9rem;
+}
+
+.newsletter-rss-box__title {
+  margin: 0 0 .28rem;
+  color: var(--primary-dark);
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+.newsletter-rss-box__desc {
+  margin: 0;
+  color: var(--text-soft);
+  font-size: .8rem;
+}
+
+.newsletter-rss-box__cta {
+  margin-top: .7rem;
+}
+
+@media (max-width: 700px) {
+  .newsletter-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-form__btn {
+    width: 100%;
+  }
+}
+
 .prensa-form-wrapper {
   background: var(--surface-alt);
   border-radius: var(--radius-lg);

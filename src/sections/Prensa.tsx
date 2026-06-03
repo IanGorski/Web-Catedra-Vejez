@@ -55,6 +55,59 @@ function PrensaForm() {
   );
 }
 
+function NewsletterForm() {
+  const { lang } = useLang();
+  const n = i18n[lang].prensa.newsletter;
+  const rssSubscribeUrl = `https://blogtrottr.com/?subscribe=${encodeURIComponent('https://catedraterceraedadyvejez.psi.uba.ar/rss.xml')}`;
+  const { status, statusMsg, handleSubmit, onBlur, onInput } = useForm(
+    'newsletterForm',
+    'mykowjzw'
+  );
+
+  return (
+    <form id="newsletterForm" className="newsletter-form" noValidate onSubmit={handleSubmit}>
+      <input type="text" name="_gotcha" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+      <input type="hidden" name="_subject" value={n.subject} />
+      <input type="hidden" name="tipo" value="newsletter" />
+      <input type="hidden" name="origen" value="seccion-prensa" />
+      <div className="newsletter-form__row">
+        <label htmlFor="newsletter-email" className="newsletter-form__label">{n.email}</label>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          required
+          autoComplete="email"
+          className="newsletter-form__input"
+          placeholder={n.placeholder}
+          onBlur={onBlur}
+          onInput={onInput}
+        />
+        <button type="submit" className="btn btn-primary newsletter-form__btn" disabled={status === 'loading'}>
+          {status === 'loading' ? n.sending : n.send}
+        </button>
+      </div>
+      <p className="newsletter-form__help">{n.help}</p>
+
+      <div className="newsletter-rss-box">
+        <p className="newsletter-rss-box__title">{n.rssTitle}</p>
+        <p className="newsletter-rss-box__desc">{n.rssDesc}</p>
+        <a
+          href={rssSubscribeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn btn-secondary newsletter-rss-box__cta"
+          aria-label={n.rssLinkLabel}
+        >
+          {n.rssCta}
+        </a>
+      </div>
+
+      <FormStatusEl msg={statusMsg} type={status} />
+    </form>
+  );
+}
+
 export default function Prensa() {
   const { lang } = useLang();
   const t = i18n[lang].prensa;
@@ -107,6 +160,14 @@ export default function Prensa() {
               Instagram
             </a>
           </div>
+        </div>
+
+        <div className="newsletter-wrapper" data-animate>
+          <div className="newsletter-header">
+            <h3>{t.newsletter.heading}</h3>
+            <p>{t.newsletter.sub}</p>
+          </div>
+          <NewsletterForm />
         </div>
 
         <div className="prensa-form-wrapper" data-animate>
