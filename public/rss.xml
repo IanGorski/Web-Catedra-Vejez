@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cátedra Psicología de la Tercera Edad y Vejez — Novedades</title>
+    <link>https://catedraterceraedadyvejez.psi.uba.ar</link>
+    <description>Actualizaciones de noticias, agenda y contenidos institucionales de la cátedra.</description>
+    <language>es-ar</language>
+    <lastBuildDate>Fri, 10 Jul 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://catedraterceraedadyvejez.psi.uba.ar/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Seminario: Modelos de cuidado en la vejez</title>
+      <link>https://catedraterceraedadyvejez.psi.uba.ar/#contacto</link>
+      <guid isPermaLink="false">https://catedraterceraedadyvejez.psi.uba.ar/#contacto#2026-07-10</guid>
+      <pubDate>Fri, 10 Jul 2026 12:00:00 GMT</pubDate>
+      <category>Jornada</category>
+      <description>Espacio de debate sobre nuevos modelos de cuidado centrado en la persona en contextos geriátricos.</description>
+    </item>
+    <item>
+      <title>Taller: Evaluación neuropsicológica en vejez</title>
+      <link>https://catedraterceraedadyvejez.psi.uba.ar/#contacto</link>
+      <guid isPermaLink="false">https://catedraterceraedadyvejez.psi.uba.ar/#contacto#2026-06-20</guid>
+      <pubDate>Sat, 20 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Taller</category>
+      <description>Taller intensivo de dos jornadas sobre instrumentos de evaluación cognitiva en adultos mayores.</description>
+    </item>
+    <item>
+      <title>Inscripción pasantías clínicas</title>
+      <link>https://catedraterceraedadyvejez.psi.uba.ar/#contacto</link>
+      <guid isPermaLink="false">https://catedraterceraedadyvejez.psi.uba.ar/#contacto#2026-06-01</guid>
+      <pubDate>Mon, 01 Jun 2026 12:00:00 GMT</pubDate>
+      <category>Convocatoria</category>
+      <description>Se abren vacantes para estudiantes avanzados interesados en pasantías clínicas con adultos mayores.</description>
+    </item>
+    <item>
+      <title>Jornada anual de Psicogerontología 2026</title>
+      <link>https://catedraterceraedadyvejez.psi.uba.ar/#noticias</link>
+      <guid isPermaLink="false">https://catedraterceraedadyvejez.psi.uba.ar/#noticias#2026-05-15</guid>
+      <pubDate>Fri, 15 May 2026 12:00:00 GMT</pubDate>
+      <category>Jornada</category>
+      <description>Este año la jornada se centrará en las nuevas perspectivas del envejecimiento activo, el cuidado y la salud mental en contextos institucionales.</description>
+    </item>
+    <item>
+      <title>Nueva publicación en revista indexada</title>
+      <link>https://catedraterceraedadyvejez.psi.uba.ar/#publicaciones</link>
+      <guid isPermaLink="false">https://catedraterceraedadyvejez.psi.uba.ar/#publicaciones#2026-04-10</guid>
+      <pubDate>Fri, 10 Apr 2026 12:00:00 GMT</pubDate>
+      <category>Publicación</category>
+      <description>El equipo publicó un artículo sobre resiliencia y bienestar psicológico en adultos mayores.</description>
+    </item>
+    <item>
+      <title>Revisión sistemática sobre institucionalización publicada</title>
+      <link>https://catedraterceraedadyvejez.psi.uba.ar/#publicaciones</link>
+      <guid isPermaLink="false">https://catedraterceraedadyvejez.psi.uba.ar/#publicaciones#2026-03-20</guid>
+      <pubDate>Fri, 20 Mar 2026 12:00:00 GMT</pubDate>
+      <category>Publicación</category>
+      <description>Nueva revisión de la literatura sobre calidad de vida en residencias geriátricas de Argentina.</description>
+    </item>
+  </channel>
+</rss>
