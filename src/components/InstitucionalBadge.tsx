@@ -55,6 +55,10 @@ export default function InstitucionalBadge() {
           alt=""
           className="ib-trigger-img"
           draggable={false}
+          loading="lazy"
+          decoding="async"
+          width={48}
+          height={48}
         />
       </button>
 
@@ -68,7 +72,7 @@ export default function InstitucionalBadge() {
         aria-label="Información institucional"
       >
         <div className="ib-drawer-header">
-          <img src="/img/Isologo/isologo.jpeg" alt="Isologo Cátedra Vejez UBA" className="ib-drawer-isologo" />
+          <img src="/img/Isologo/isologo.jpeg" alt="Isologo Cátedra Vejez UBA" className="ib-drawer-isologo" loading="lazy" decoding="async" width={42} height={42} />
           <div>
             <p className="ib-drawer-title">Cátedra de Psicología<br />de la Tercera Edad y Vejez</p>
             <p className="ib-drawer-inst">Facultad de Psicología · UBA</p>

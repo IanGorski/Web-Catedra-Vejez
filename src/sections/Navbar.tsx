@@ -75,7 +75,7 @@ export default function Navbar() {
       <div className="nav-container">
         <a className="nav-brand" href="#inicio" aria-label="Inicio">
           <span className="nav-brand-isologo" aria-hidden="true">
-            <img src="/img/Isologo/isologo.jpeg" alt="" className="nav-isologo-img" />
+            <img src="/img/Isologo/isologo.jpeg" alt="" className="nav-isologo-img" decoding="async" width={34} height={34} />
           </span>
           <span className="nav-brand-text">
             <span className="nav-brand-title">Cátedra Vejez</span>

@@ -50,8 +50,9 @@ export default function Galeria() {
                 <img
                   src={img.src}
                   alt={img.alt}
-                  loading={i === 0 ? 'eager' : 'lazy'}
+                  loading="lazy"
                   decoding="async"
+                  fetchPriority="low"
                   className="gallery-img"
                 />
                 <span className="gallery-caption">{img.alt.split('—')[0].trim()}</span>
