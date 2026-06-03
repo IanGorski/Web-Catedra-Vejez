@@ -31,7 +31,7 @@ export default function Posgrado() {
               </ul>
               <div className="posgrado-card-footer">
                 <p className="posgrado-costo-nota">{card.costoNota}</p>
-                <a href={card.href} target="_blank" rel="noopener noreferrer" className="btn btn-outline-white btn-sm">
+                <a href={card.href} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">
                   {card.cta}
                 </a>
               </div>

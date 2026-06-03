@@ -423,6 +423,9 @@ p  { max-width: 65ch; color: var(--text-soft); }
   font-size: .8rem;
   transition: opacity var(--transition), height var(--transition);
 }
+:root:not([data-theme="dark"]) .banner {
+  background: #f02c33;
+}
 .banner.hidden { opacity: 0; pointer-events: none; height: 0; overflow: hidden; }
 .banner-inner {
   display: flex;
@@ -1051,11 +1054,11 @@ p  { max-width: 65ch; color: var(--text-soft); }
 :root:not([data-theme="dark"]) .stat                   { color: #2C1420; }
 :root:not([data-theme="dark"]) .stat::after            { background: var(--primary); }
 :root:not([data-theme="dark"]) .stat-number {
-  background: linear-gradient(120deg, var(--primary-dark) 15%, var(--accent-dark) 100%);
+  background: linear-gradient(120deg, #fff4d6 12%, #ffd166 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 2px 16px rgba(232,145,106,.25));
+  filter: drop-shadow(0 2px 16px rgba(0,0,0,.16));
 }
 :root:not([data-theme="dark"]) .stat-plus              { color: var(--primary-dark); -webkit-text-fill-color: var(--primary-dark); }
 :root:not([data-theme="dark"]) .stat-label             { color: rgba(44,20,32,.6); }
@@ -1196,8 +1199,8 @@ p  { max-width: 65ch; color: var(--text-soft); }
   gap: clamp(16px, 2.5vw, 24px);
 }
 .posgrado-card {
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.12);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   padding: clamp(20px, 3.5vw, 32px);
   transition: background var(--transition), border-color var(--transition);
@@ -1205,7 +1208,10 @@ p  { max-width: 65ch; color: var(--text-soft); }
   flex-direction: column;
   gap: .65rem;
 }
-.posgrado-card:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.25); }
+.posgrado-card:hover {
+  background: color-mix(in srgb, var(--surface-alt) 80%, var(--primary-light) 20%);
+  border-color: var(--primary);
+}
 .posgrado-tag {
   font-size: .68rem;
   font-weight: 600;
@@ -1213,12 +1219,12 @@ p  { max-width: 65ch; color: var(--text-soft); }
   text-transform: uppercase;
   border-radius: 100px;
   padding: .2em .75em;
-  background: rgba(255,255,255,.12);
-  color: rgba(255,255,255,.8);
+  background: color-mix(in srgb, var(--primary) 15%, var(--surface));
+  color: var(--primary-dark);
   align-self: flex-start;
 }
-.posgrado-tag--accent { background: rgba(232,160,32,.2); color: var(--accent); }
-.posgrado-card p  { font-size: .875rem; color: rgba(255,255,255,.65); max-width: none; }
+.posgrado-tag--accent { background: rgba(232,160,32,.2); color: var(--accent-dark); }
+.posgrado-card p  { font-size: .875rem; color: var(--text-soft); max-width: none; }
 .posgrado-features {
   display: flex;
   flex-direction: column;
@@ -1227,7 +1233,7 @@ p  { max-width: 65ch; color: var(--text-soft); }
 }
 .posgrado-features li {
   font-size: .82rem;
-  color: rgba(255,255,255,.65);
+  color: var(--text-soft);
   display: flex;
   align-items: flex-start;
   gap: .5em;
@@ -1252,7 +1258,7 @@ p  { max-width: 65ch; color: var(--text-soft); }
 .posgrado-modalidad {
   font-size: .72rem;
   font-weight: 600;
-  color: rgba(255,255,255,.5);
+  color: var(--text-muted);
   letter-spacing: .05em;
   text-transform: uppercase;
 }
@@ -1264,13 +1270,13 @@ p  { max-width: 65ch; color: var(--text-soft); }
 }
 .posgrado-costo-nota {
   font-size: .75rem;
-  color: rgba(255,255,255,.4);
+  color: var(--text-muted);
   font-style: italic;
 }
 .posgrado-nota {
   text-align: center;
   font-size: .82rem;
-  color: rgba(255,255,255,.45);
+  color: var(--text-soft);
   margin-top: 2.5rem;
   max-width: 600px;
   margin-inline: auto;
@@ -2345,7 +2351,7 @@ figcaption span {
 .footer-bottom a { color: rgba(255,255,255,.5); transition: color var(--transition); }
 .footer-bottom a:hover { color: #fff; }
 
-/* ── FOOTER — modo claro: rosa de marca ─────────────────────── */
+/* ── FOOTER — modo claro: rosa de marca ───────────────────────── */
 :root:not([data-theme="dark"]) .footer                { background: #F5D5E8; color: rgba(44,20,32,.78); }
 :root:not([data-theme="dark"]) .footer::before         { color: rgba(44,20,32,.05); }
 :root:not([data-theme="dark"]) .footer-grid            { border-bottom-color: rgba(44,20,32,.12); }
@@ -3289,6 +3295,16 @@ figcaption span {
 .section-modal-body .stats-bar {
   background: transparent !important;
 }
+.section-modal-body .section--dark {
+  color: var(--text);
+}
+.section-modal-body .section--dark p,
+.section-modal-body .section--dark h2,
+.section-modal-body .section--dark h3,
+.section-modal-body .section--dark h4 {
+  color: inherit;
+}
+/* Posgrado uses CSS vars directly — no modal overrides needed */
 .section-modal-body .container {
   padding-top: 0;
 }
