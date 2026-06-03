@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "test": "vitest",
     "test:run": "vitest run",
+    "test:run:stable": "vitest run --pool=threads",
     "coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
     "test:e2e:headed": "playwright test --headed"
